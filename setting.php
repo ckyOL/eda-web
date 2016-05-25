@@ -5,7 +5,7 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"  media="screen,projection"/>
 
-    <link href="http://fonts.useso.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -33,6 +33,39 @@
 </nav>
 
 <div class="container">
+
+
+    <div class="row">
+        <a >Profile picture</a>
+        <img src="images/sample-1.jpg">
+        <form action="#">
+            <div class="file-field input-field col s6">
+                <input class="file-path validate hide" type="text"/>
+                <div class="btn">
+                     <span>Upload </span>
+                     <input type="file" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s6">
+            <input value="" id="userName" type="text" class="validate">
+            <label class="active" for="userName">User Name</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="password" type="password" class="validate">
+            <label class="active" for="password">Password</label>
+        </div>
+    </div>
+
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="mdi-content-send right"></i>
+    </button>
 
 </div>
 
