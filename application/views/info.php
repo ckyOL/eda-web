@@ -17,8 +17,8 @@
 <nav>
     <div class="nav-wrapper light-blue darken-1">
         <div class="col s12">
-            <a href="#!" class="breadcrumb">Stream</a>
-            <a href="#!" class="breadcrumb"></a>
+            <a href="friend.php" class="breadcrumb">Stream</a>
+            <a href="#!" class="breadcrumb">Info</a>
         </div>
     </div>
 </nav>
@@ -106,21 +106,26 @@
         </div>
     </div>
 
-    <div class="card large">
-        <div class="card-content">
-            <span class="card-title">Comment
 
-        </div>
-        <div class="card-action">
-            <div class="input-field ">
-                <input id="comment" type="text" class="validate">
-                <label for="comment">Type here</label>
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel  light-blue lighten-5">
+         <span>I am a very simple card. I am good at containing small bits of information.
+         I am convenient because I require little markup to use effectively. I am similar to what is called a panel
+         in other frameworks.
+         </span>
             </div>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                <i class="mdi-content-send right"></i>
-            </button>
         </div>
     </div>
+
+    <div class="input-field ">
+        <input id="comment" type="text" class="validate">
+        <label for="comment">Type here</label>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="mdi-content-send right"></i>
+    </button>
+
 
 </div>
 

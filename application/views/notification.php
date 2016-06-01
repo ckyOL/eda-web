@@ -22,11 +22,12 @@
         <a class="brand-logo ">EDA</a>
 
         <ul id="slide-out" class="side-nav">
-            <li><a href="hot">Hot</a></li>
-            <li><a href="friend">Friend</a></li>
-            <li><a href="collect">Collect</a></li>
-            <li class="active"><a href="notification">Notification</a></li>
-            <li><a href="setting">Setting</a></li>
+            <li><a href="hot.php">Hot</a></li>
+            <li><a href="collection.php">Collection</a></li>
+            <li><a href="friend.php">Friend</a></li>
+            <li><a href="">Search</a></li>
+            <li class="active"><a href="notification.php">Notification</a></li>
+            <li><a href="setting.php">Setting</a></li>
         </ul>
 
     </div>
