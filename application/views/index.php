@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Login in</a>
+        <a type="submit" class=" modal-action modal-close waves-effect waves-green btn-flat">Login in</a>
     </div>
 </div>
 
@@ -66,7 +66,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</a>
+        <a type="submit" class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</a>
     </div>
 </div>
 
