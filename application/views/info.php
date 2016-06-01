@@ -130,6 +130,6 @@
 
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="/public/js/app.js"></script>
 </body>
 </html>
