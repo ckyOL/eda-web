@@ -69,6 +69,10 @@
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</a>
     </div>
 </div>
+
+
+
+
 <!--Import jQuery before materialize.js-->
 
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
