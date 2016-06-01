@@ -23,13 +23,13 @@
         </div>
         <footer>
             <ul class="pagination">
-                <li class="disabled"><a href="#!"><i class="material-icons">keyboard_arrow_left</i></a></li>
-                <li class="waves-effect"><a onclick="collUpload()">1</a></li>
-                <li class="waves-effect"><a onclick="topsUpload()">2</a></li>
-                <li class="active"><a onclick="bottomsUpload()">3</a></li>
-                <li class="waves-effect"><a onclick="shoeUpload()">4</a></li>
-                <li class="waves-effect"><a onclick="assUpload()">5</a></li>
-                <li class="waves-effect"><a href="#!"><i class="material-icons">keyboard_arrow_right</i></a></li>
+                <li class="waves-effect"><a onclick="getNextForm('topsup.php')"><i class="material-icons">keyboard_arrow_left</i></a></li>
+                <li class="waves-effect"><a onclick="getNextForm('collup.php')">1</a></li>
+                <li class="waves-effect"><a onclick="getNextForm('topsup.php')">2</a></li>
+                <li class="active"><a onclick="getNextForm('bottomsup.php')">3</a></li>
+                <li class="waves-effect"><a onclick="getNextForm('shoesup.php')">4</a></li>
+                <li class="waves-effect"><a onclick="getNextForm('assup.php')">5</a></li>
+                <li class="waves-effect"><a onclick="getNextForm('shoesup.php')"><i class="material-icons">keyboard_arrow_right</i></a></li>
             </ul>
         </footer>
     </div>
