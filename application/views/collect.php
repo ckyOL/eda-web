@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-<head>
-
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"  media="screen,projection"/>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Friend Collocation</title>
+<?php include "/public/static/head.php"; ?>
+    <title>Collection Collocation</title>
 </head>
 
 <body>
@@ -22,9 +12,9 @@
         <a class="brand-logo ">EDA</a>
 
         <ul id="slide-out" class="side-nav">
-            <li><a href="hot">Hot</a></li>
+            <li><a href="/">Hot</a></li>
+            <li class="active"><a href="collect">Collection</a></li>
             <li><a href="friend">Friend</a></li>
-            <li class="active"><a href="collect">Collect</a></li>
             <li><a href="notification">Notification</a></li>
             <li><a href="setting">Setting</a></li>
         </ul>
@@ -35,7 +25,25 @@
 
 <div class="container">
     <div class="row">
-        <div class="col s12 m7">
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                </div>
+                <div class="card-content">
+                    <p></p>
+                </div>
+                <div class="card-action">
+                    <span>
+                        <a href="#" ><i class="material-icons light-blue-text ">thumb_up</i></a>
+                        <a href="#" ><i class="material-icons light-blue-text ">favorite</i></a>
+                        <a href="#" ><i class="material-icons light-blue-text right">more_horiz</i></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6">
             <div class="card">
                 <div class="card-image">
                     <img src="images/sample-1.jpg">
@@ -54,17 +62,6 @@
         </div>
     </div>
 
-    <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
-        <a class="btn-floating btn-large waves-effect waves-light purple darken-1" href="upload.php"><i class="material-icons">add</i></a>
-    </div>
 </div>
-
-
-
-<!--Import jQuery before materialize.js-->
-
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-<script type="text/javascript" src="/public/js/app.js"></script>
 </body>
 </html>

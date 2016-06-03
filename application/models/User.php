@@ -11,7 +11,7 @@ class User extends CI_Model
     {
         $this->load->database();
     }
-    public function checkUser()
+    public function checkUser($username)
     {
 
     }

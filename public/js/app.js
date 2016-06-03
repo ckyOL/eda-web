@@ -22,3 +22,25 @@ function getNextForm(pageName) {
         });
 }
 
+function simpleGet(url,ajaxid) {
+    $.get(url, { },
+        function(data){
+            $("#"+ajaxid).html(data);
+        });
+}
+
+function simpleSubmit(formid,ajaxid,url) {
+    $.ajax({
+        cache:false,
+        type: "POST",
+        url:url,
+        data:$("#"+formid).serialize(),
+        async: true,
+        error: function(request) {
+            alert("Connection error");
+        },
+        success: function(data) {
+            $("#"+ajaxid).html(data);
+        }
+    });
+}

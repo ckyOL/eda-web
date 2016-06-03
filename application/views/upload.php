@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-<head>
-
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"  media="screen,projection"/>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<?php include "/public/static/head.php"; ?>
     <title>Upload</title>
 </head>
 
@@ -17,7 +7,7 @@
 <nav>
     <div class="nav-wrapper light-blue darken-1">
         <div class="col s12">
-            <a href="friend.php" class="breadcrumb">Stream</a>
+            <a href="javascript:history.go(-1);" class="breadcrumb">Stream</a>
             <a href="#!" class="breadcrumb">Upload</a>
         </div>
     </div>
@@ -66,10 +56,6 @@
     </div>
 </div>
 
-<!--Import jQuery before materialize.js-->
 
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-<script type="text/javascript" src="/public/js/app.js"></script>
 </body>
 </html>
