@@ -1,4 +1,5 @@
-<?php include "/public/static/head.php"; ?>
+
+<?php include "public/static/head.php"; ?>
 <title>Eda</title>
 </head>
 <body>
@@ -21,25 +22,55 @@
 
 <div class="container">
     <div class="row">
-        <?php foreach ($friendCard as $card_item): ?>\
-            <div class="col s12 m6">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="<?php echo $card_item['photo']; ?>">
-                    </div>
-                    <div class="card-content">
-                        <p><?php echo $card_item['userName']; ?></p>
-                    </div>
-                    <div class="card-action">
+
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                </div>
+                <div class="card-content">
+                    <p></p>
+                </div>
+                <div class="card-action">
                     <span>
-                        <a href="#" ><i class="material-icons light-blue-text ">thumb_up</i></a>
-                        <a href="#" ><i class="material-icons light-blue-text ">favorite</i></a>
                         <a href="#" ><i class="material-icons light-blue-text right">more_horiz</i></a>
                     </span>
-                    </div>
                 </div>
             </div>
-        <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+
+<div id="login" class="modal">
+    <div class="modal-content">
+        <div class="input-field col s6">
+            <input id="username" type="text" class="validate">
+            <label for="username">User Name</label>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password" type="password" class="validate">
+                <label for="password">Password</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a type="submit" class=" modal-action modal-close waves-effect waves-green btn-flat">Login in</a>
+    </div>
+</div>
+
+<div id="sign" class="modal">
+    <div class="modal-content">
+        <div class="input-field col s6">
+            <input id="username" type="text" class="validate">
+            <label for="username">User Name</label>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password" type="password" class="validate">
+                <label for="password">Password</label>
+            </div>
+        </div>
     </div>
 </div>
 </body>

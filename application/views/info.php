@@ -29,18 +29,6 @@
     </div>
 
     <div class="row">
-        <div class="col s6">
-            <div class="card medium">
-                <div class="card-image">
-                    <img src="images/sample-1.jpg">
-                    <span class="card-title"></span>
-                </div>
-                <div class="card-content">
-                    <h6>Brand:</h6>
-                    <h6>Describe:</h6>
-                </div>
-            </div>
-        </div>
 
         <div class="col s6">
             <div class="card medium">
@@ -54,31 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s6">
-            <div class="card medium">
-                <div class="card-image">
-                    <img src="images/sample-1.jpg">
-                    <span class="card-title">Shoes</span>
-                </div>
-                <div class="card-content">
-                    <p class="flow-text">Brand:</p>
-                    <p class="flow-text">Describe:</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="col s6">
-            <div class="card medium">
-                <div class="card-image">
-                    <img src="images/sample-1.jpg">
-                    <span class="card-title">Accessories</span>
-                </div>
-                <div class="card-content">
-                    <p class="flow-text">Brand:</p>
-                    <p class="flow-text">Describe:</p>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="card large">
