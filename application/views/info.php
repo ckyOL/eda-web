@@ -1,4 +1,4 @@
-<?php include "/public/static/head.php"; ?>
+<?php include "public/static/head.php"; ?>
     <title>Clothing Collocation</title>
 </head>
 
@@ -24,6 +24,7 @@
                 <h5 class="flow-text">Style:</h5>
                 <h5 class="flow-text">Scenario:</h5>
                 <h5 class="flow-text">Season:</h5>
+                <h5 class="flow-text">Sex:</h5>
             </div>
         </div>
     </div>
@@ -55,26 +56,26 @@
             <span>
                 <a href="#" ><i class="material-icons light-blue-text ">thumb_up</i></a>
                 <a href="#" ><i class="material-icons light-blue-text ">favorite</i></a>
+                <a href="#" ><i class="material-icons light-blue-text ">create</i></a>
                 <a href="#" ><i class="material-icons light-blue-text right">shopping_cart</i></a>
             </span>
         </div>
     </div>
 
 
-    <div class="row">
-        <div class="col s12">
-            <div class="card-panel  light-blue lighten-5">
-         <span>I am a very simple card. I am good at containing small bits of information.
-         I am convenient because I require little markup to use effectively. I am similar to what is called a panel
-         in other frameworks.
-         </span>
-            </div>
-        </div>
-    </div>
+    <ul class="collection">
+        <li class="collection-item avatar">
+            <img src="images/yuna.jpg" alt="" class="circle">
+            <span class="title">Title</span>
+            <p>First Line <br>
+                Second Line
+            </p>
+        </li>
+    </ul>
 
     <div class="input-field ">
         <input id="comment" type="text" class="validate">
-        <label for="comment">Type here</label>
+        <label for="comment">Comment Type here</label>
     </div>
     <button class="btn waves-effect waves-light" type="submit" name="action">Submit
         <i class="mdi-content-send right"></i>

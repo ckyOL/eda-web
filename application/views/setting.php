@@ -1,15 +1,9 @@
-<?php include "/public/static/head.php"; ?>
+<?php include "public/static/head.php"; ?>
     <title>Setting</title>
 </head>
 
 <body>
-
-<nav>
-    <div class="nav-wrapper light-blue darken-1">
-        <ul class="left hide-on-med-and-down">
-            <li><a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a></li>
-        </ul>
-        <a class="brand-logo ">EDA</a>
+<?php include "public/static/nav.php" ?>
 
         <ul id="slide-out" class="side-nav">
             <li><a href="/">Hot</a></li>

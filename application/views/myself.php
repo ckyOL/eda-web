@@ -1,8 +1,57 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: piekey1994
- * Date: 2016-06-01
- * Time: 16:38
- * 个人页，包括自己发布的文章，还有好友数量
-*/
+<?php include "public/static/head.php"; ?>
+<title>My Collocation</title>
+</head>
+
+<body>
+
+<?php include "public/static/nav.php" ?>
+
+<ul id="slide-out" class="side-nav">
+    <li><a href="hot">Hot</a></li>
+    <li><a href="collect">Collection</a></li>
+    <li><a href="friend">Friend</a></li>
+    <li><a href="notification">Notification</a></li>
+    <li><a href="setting">Setting</a></li>
+
+</ul>
+
+</div>
+
+</nav>
+
+<div class="container">
+    <div class="card Medium">
+        <div class="card-image">
+            <img src="images/sample-1.jpg">
+        </div>
+        <div class="card-content">
+            <h5 class="flow-text">Name:</h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <?php foreach ($myCard as $card_item): ?>\
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="<?php echo $card_item['photo']; ?>">
+                    </div>
+                    <div class="card-content">
+                        <p><?php echo $card_item['userName']; ?></p>
+                    </div>
+                    <div class="card-action">
+                    <span>
+                        <a href="#" ><i class="material-icons light-blue-text right">more_horiz</i></a>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
+        <a class="btn-floating btn-large waves-effect waves-light purple darken-1" href="upload.php"><i class="material-icons">add</i></a>
+    </div>
+</div>
+</body>
+</html>

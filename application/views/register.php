@@ -1,4 +1,4 @@
-<?php include "/public/static/head.php"; ?>
+<?php include "public/static/head.php"; ?>
     <title>Eda Register</title>
 </head>
 

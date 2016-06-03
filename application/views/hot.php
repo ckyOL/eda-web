@@ -1,18 +1,12 @@
-<?php include "/public/static/head.php"; ?>
+<?php include "public/static/head.php"; ?>
 
     <title>Hot Collocation</title>
 
 </head>
 
 <body>
+<?php include "public/static/nav.php" ?>
 
-<nav>
-    <div class="nav-wrapper light-blue darken-1">
-        <ul class="left hide-on-med-and-down">
-            <li><a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a></li>
-        </ul>
-        <a class="brand-logo ">EDA</a>
-        
         <ul id="slide-out" class="side-nav">
             <li class="active"><a href="/">Hot</a></li>
             <li><a href="collect">Collection</a></li>
