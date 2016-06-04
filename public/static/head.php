@@ -3,9 +3,10 @@
 <head>
 
     <!--Import materialize.css-->
+
     <link type="text/css" rel="stylesheet" href="/public/css/materialize.min.css"  media="screen,projection"/>
-    <link href="http://fonts.useso.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="/public/css/index.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="/public/js/materialize.min.js"></script>

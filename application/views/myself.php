@@ -17,23 +17,48 @@
     </div>
 
     <div class="row">
-        <?php foreach ($myCard as $card_item): ?>\
-            <div class="col s12 m6">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="<?php echo $card_item['photo']; ?>">
-                    </div>
-                    <div class="card-content">
-                        <p><?php echo $card_item['userName']; ?></p>
-                    </div>
-                    <div class="card-action">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s6"><a class="active" href="#myColl">My Collocation</a></li>
+                <li class="tab col s6"><a href="#myFriend">Friend</a></li>
+            </ul>
+        </div>
+
+        <div id="myColl" class="col s12">
+            <?php foreach ($myCard as $card_item): ?>\
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="<?php echo $card_item['photo']; ?>">
+                        </div>
+                        <div class="card-content">
+                            <p><?php echo $card_item['userName']; ?></p>
+                        </div>
+                        <div class="card-action">
                     <span>
                         <a href="#" ><i class="material-icons light-blue-text right">more_horiz</i></a>
                     </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
+
+        <div id="myFriend" class="col s12">
+            <ul class="collection">
+                <?php foreach ($myFriend as $collectItem): ?>
+                <li class="collection-item avatar">
+                    <img src="<?php echo $collectItem["photo"]; ?>" alt="" class="circle">
+                    <span class="title"><?php echo $collectItem["userName"]; ?></span>
+                    <p>First Line <br>
+                        Second Line
+                    </p>
+                    <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+
     </div>
 
     <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">

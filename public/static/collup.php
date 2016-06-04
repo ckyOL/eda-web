@@ -26,6 +26,11 @@
             <label class="active" for="Season">Season</label>
         </div>
 
+        <div class="input-field col s6">
+            <input value="" id="Season" type="text" class="validate">
+            <label class="active" for="Season">Sex</label>
+        </div>
+
     </div>
     <footer>
         <ul class="pagination">
