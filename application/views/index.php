@@ -10,12 +10,14 @@
     <div class="row">
 
         <div class="col s12 m6">
-            <div class="card">
+            <div class="card medium">
                 <div class="card-image">
-                    <img src="images/sample-1.jpg">
+                    <img src="/public/img/white.jpg">
+                    <span class="card-title">Author:admin</span>
                 </div>
                 <div class="card-content">
-                    <p></p>
+                    <p>It's very white.It's very white.
+                        It's very white.It's very white.</p>
                 </div>
                 <div class="card-action">
                     <span>
@@ -24,8 +26,11 @@
                 </div>
             </div>
         </div>
+
     </div>
 </div>
+
+
 
 </body>
 </html>

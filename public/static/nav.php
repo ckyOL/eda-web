@@ -7,7 +7,7 @@
 
         <ul class="right hide-on-med-and-down">
             <li><a class="modal-trigger" href="#searchmodal"><i class="material-icons left">search</i>Search Collocation</a></li>
-            <li><a href="myself"><img class="left" src="">UserName</a></li>
+            <li><a href="myself"><img class="left circle" src="<?php //echo $pictureUrl; ?>"><?php echo $userName; ?></a></li>
         </ul>
         <ul id="slide-out" class="side-nav">
             <li><a href="/">Hot</a></li>

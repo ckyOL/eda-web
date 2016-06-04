@@ -27,6 +27,23 @@ class User extends CI_Model
         );
         return $this->db->insert($this->table, $data);
     }
+    
+    public function getName($id)
+    {
+        $query = $this->db->get_where($this->table, array('id' => $id));
+        $row = $query->row();
+        if (isset($row)) return $row->name;
+        else return '%unknown%';
+    }
+    
+    public function getPicture($id)
+    {
+        $query = $this->db->get_where($this->table, array('id' => $id));
+        $row = $query->row();
+        if (isset($row)) return $row->picture;
+        else return '%unknown%';
+    }
+    
     public function updateUser()
     {
         

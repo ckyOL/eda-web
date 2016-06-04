@@ -61,9 +61,7 @@
 
     </div>
 
-    <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
-        <a class="btn-floating btn-large waves-effect waves-light purple darken-1" href="upload.php"><i class="material-icons">add</i></a>
-    </div>
+    
 </div>
 </body>
 </html>

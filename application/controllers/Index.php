@@ -12,17 +12,28 @@ class Index extends CI_Controller
     {
         parent::__construct();
         $this->load->library('session');
+        $this->load->model('User');
+        $this->load->model('Matching');
     }
 
     public function index()
     {
+        $cards=$this->Matching->getHotMatching();
+
         if(isset($this->session->userid))
         {
-            $this->load->view('/hot');
+            $id=$this->session->userid;
+            $date=array(
+                'userName' => $this->User->getName($id),
+                'pictureUrl' => $this->User->getPicture($id),
+                'cards' => $cards
+            );
+            $this->load->view('/hot',$date);
         }
         else
         {
-            $this->load->view('/index');
+            $date['cards']=$cards;
+            $this->load->view('/index',$date);
         }
     }
 }
