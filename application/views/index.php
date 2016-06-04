@@ -4,21 +4,7 @@
 </head>
 <body>
 
-<nav>
-    <div class="nav-wrapper light-blue darken-1">
-        
-        <a class="brand-logo ">EDA</a>
-
-        <ul class="right hide-on-med-and-down">
-
-            <li><a href="register">Sign up</a></li>
-            <li><a href="login">Login in</a></li>
-        </ul>
-        
-
-    </div>
-
-</nav>
+<?php include "public/static/nav2.php" ?>
 
 <div class="container">
     <div class="row">

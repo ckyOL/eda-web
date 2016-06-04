@@ -16,7 +16,7 @@ class Index extends CI_Controller
 
     public function index()
     {
-        if(isset($this->session->user))
+        if(isset($this->session->userid))
         {
             $this->load->view('/hot');
         }

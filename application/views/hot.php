@@ -7,19 +7,6 @@
 <body>
 <?php include "public/static/nav.php" ?>
 
-        <ul id="slide-out" class="side-nav">
-            <li class="active"><a href="/">Hot</a></li>
-            <li><a href="collect">Collection</a></li>
-            <li><a href="friend">Friend</a></li>
-            <li><a href="">Search</a></li>
-            <li><a href="notification">Notification</a></li>
-            <li><a href="setting">Setting</a></li>
-        </ul>
-
-    </div>
-
-</nav>
-
 <div class="container">
     <div class="row">
         <div class="col s12 m6">
@@ -41,9 +28,7 @@
         </div>
     </div>
 
-    <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
-        <a class="btn-floating btn-large waves-effect waves-light purple darken-1" href="upload.php"><i class="material-icons">add</i></a>
-    </div>
+
 </div>
 
 </body>

@@ -6,19 +6,6 @@
 
 <?php include "public/static/nav.php" ?>
 
-<ul id="slide-out" class="side-nav">
-    <li><a href="hot">Hot</a></li>
-    <li><a href="collect">Collection</a></li>
-    <li><a href="friend">Friend</a></li>
-    <li><a href="notification">Notification</a></li>
-    <li><a href="setting">Setting</a></li>
-
-</ul>
-
-</div>
-
-</nav>
-
 <div class="container">
     <div class="card Medium">
         <div class="card-image">

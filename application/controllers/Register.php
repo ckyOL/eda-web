@@ -20,17 +20,24 @@ class Register extends CI_Controller {
     public function index()
     {
 
+        $data=array(
+            'successInfo' => "",
+            'systemerror' => "",
+        );
+
         $this->form_validation->set_rules('username', 'Username', 'required|min_length[1]|max_length[20]|callback_spcharCheck|is_unique[user.name]');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[4]|max_length[20]');
 
         if ($this->form_validation->run() == FALSE)
         {
-            $data['successInfo']="";
             $this->load->view('register',$data);
         }
         else
         {
-            $data['successInfo']="sign up success!";
+            if($this->User->registerUser($this->input->post('username'),$this->input->post('password')))
+                $data['successInfo']='sign up success!';
+            else
+                $data['systemerror']='sql error!Maybe your name was used!';
             $this->load->view('register',$data);
         }
     }

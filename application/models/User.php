@@ -7,17 +7,25 @@
  */
 class User extends CI_Model
 {
+    private $table='user';
     public function __construct()
     {
         $this->load->database();
     }
-    public function checkUser($username)
+    public function login($username,$password)
     {
-
+        $query = $this->db->get_where($this->table, array('name' => $username,'password' => $password));
+        $row = $query->row();
+        if (isset($row)) return $row->id;
+        else return -1;
     }
-    public function registerUser()
+    public function registerUser($username,$password)
     {
-
+        $data = array(
+            'name' => $username,
+            'password' => $password,
+        );
+        return $this->db->insert($this->table, $data);
     }
     public function updateUser()
     {

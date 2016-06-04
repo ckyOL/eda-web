@@ -3,39 +3,32 @@
 </head>
 
 <body>
-
-<nav>
-    <div class="nav-wrapper light-blue darken-1">
-
-        <a class="brand-logo ">EDA</a>
-
-        <ul class="right hide-on-med-and-down">
-
-            <li><a class="modal-trigger" href="register">Sign up</a></li>
-            <li><a class="modal-trigger" href="login">Login in</a></li>
-        </ul>
-
-
-    </div>
-
-</nav>
+<?php include "public/static/nav2.php" ?>
 
 <div class="container">
-    <div class="modal-content">
-        <div class="input-field col s6">
-            <input id="username" type="text" class="validate">
-            <label for="username">User Name</label>
-        </div>
+    <div>
+        <h3>Login in</h3>
+    </div>
+
+    <div class="red lighten-2"><span class="white-text"><?php echo validation_errors();echo $systemerror; ?></span></div>
+
+    <form id="loginForm" method="post">
         <div class="row">
             <div class="input-field col s12">
-                <input id="password" type="password" class="validate">
+                <input id="username" name="username" type="text" value="<?php echo set_value('username'); ?>">
+                <label for="username">User Name</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="password" name="password" type="password" value="<?php echo set_value('password'); ?>">
                 <label for="password">Password</label>
             </div>
         </div>
-    </div>
-    <div class="modal-footer">
-        <a class="modal-action waves-effect waves-green btn-flat">Login in</a>
-    </div>
+        <div class="col s12">
+            <button class="btn waves-effect waves-green" type="submit">Login in
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
 </div>
 
 

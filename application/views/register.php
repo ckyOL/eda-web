@@ -3,26 +3,14 @@
 </head>
 
 <body>
-
-<nav>
-    <div class="nav-wrapper light-blue darken-1">
-
-        <a class="brand-logo ">EDA</a>
-
-        <ul class="right hide-on-med-and-down">
-
-            <li><a class="modal-trigger" href="register">Sign up</a></li>
-            <li><a class="modal-trigger" href="login">Login in</a></li>
-        </ul>
-
-
-    </div>
-
-</nav>
+<?php include "public/static/nav2.php" ?>
 
 <div class="container">
+    <div>
+        <h3>Sign up</h3>
+    </div>
 
-    <div class="red lighten-2"><span class="white-text"><?php echo validation_errors(); ?></span></div>
+    <div class="red lighten-2"><span class="white-text"><?php echo validation_errors();echo $systemerror; ?></span></div>
     <div class="teal lighten-2"><span class="white-text"><?php echo $successInfo; ?></span></div>
 
     <form id="registerForm" method="post">
