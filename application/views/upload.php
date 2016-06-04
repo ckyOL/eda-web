@@ -41,18 +41,23 @@
                 <input value="" id="Season" type="text" class="validate">
                 <label class="active" for="Season">Season</label>
             </div>
+
+            <div class="input-field col s6">
+                <input value="" id="Sex" type="text" class="validate">
+                <label class="active" for="Sex">Sex</label>
+            </div>
         </div>
-        <footer>
-            <ul class="pagination">
-                <li class="disabled"><a href="#!"><i class="material-icons">keyboard_arrow_left</i></a></li>
-                <li class="active"><a onclick="getNextForm('collup.php')">1</a></li>
-                <li class="waves-effect"><a onclick="getNextForm('topsup.php')">2</a></li>
-                <li class="waves-effect"><a onclick="getNextForm('bottomsup.php')">3</a></li>
-                <li class="waves-effect"><a onclick="getNextForm('shoesup.php')">4</a></li>
-                <li class="waves-effect"><a onclick="getNextForm('assup.php')">5</a></li>
-                <li class="waves-effect"><a href="#!"><i class="material-icons">keyboard_arrow_right</i></a></li>
-            </ul>
-        </footer>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input value="" id="CollocationNum" type="text" class="validate">
+                <label class="active" for="CollocationNum">Collocation Number</label>
+            </div>
+        </div>
+
+        <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
+            <a class="waves-effect waves-light btn"><i class="material-icons right">arrow_forward</i>Next</a>
+        </div>
     </div>
 </div>
 

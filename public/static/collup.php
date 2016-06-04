@@ -14,34 +14,18 @@
         </div>
 
         <div class="input-field col s6">
-            <input value="" id="Style" type="text" class="validate">
-            <label class="active" for="Style">Style</label>
+            <input value="" id="Brand" type="text" class="validate">
+            <label class="active" for="Brand">Brand</label>
         </div>
         <div class="input-field col s6">
-            <input value="" id="Scenario" type="text" class="validate">
-            <label class="active" for="Scenario">Scenario</label>
+            <input value="" id="Describe" type="text" class="validate">
+            <label class="active" for="Describe">Describe</label>
         </div>
-        <div class="input-field col s6">
-            <input value="" id="Season" type="text" class="validate">
-            <label class="active" for="Season">Season</label>
-        </div>
-
-        <div class="input-field col s6">
-            <input value="" id="Season" type="text" class="validate">
-            <label class="active" for="Season">Sex</label>
-        </div>
-
     </div>
-    <footer>
-        <ul class="pagination">
-            <li class="disabled"><a href="#!"><i class="material-icons">keyboard_arrow_left</i></a></li>
-            <li class="active"><a onclick="getNextForm('collup.php')">1</a></li>
-            <li class="waves-effect"><a onclick="getNextForm('topsup.php')">2</a></li>
-            <li class="waves-effect"><a onclick="getNextForm('bottomsup.php')">3</a></li>
-            <li class="waves-effect"><a onclick="getNextForm('shoesup.php')">4</a></li>
-            <li class="waves-effect"><a onclick="getNextForm('assup.php')">5</a></li>
-            <li class="waves-effect"><a onclick="getNextForm('topsup.php')"><i class="material-icons">keyboard_arrow_right</i></a></li>
-        </ul>
-    </footer>
 
+    <div class="row">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="mdi-content-send right"></i>
+        </button>
+    </div>
 </div>
