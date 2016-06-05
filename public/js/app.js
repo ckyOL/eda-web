@@ -19,8 +19,9 @@ function getNextForm(pageName) {
         });
 }
 
-function clothes(pageName,number) {
-    for (var i=0;i<number;i++){
+function clothes(pageName) {
+    var num = namber.CollcationNum.value;
+    for (var i=0;i<num;i++){
         $.get("/public/static/"+pageName, { },
             function(data){
                 $("#uploadDiv").html(data);
