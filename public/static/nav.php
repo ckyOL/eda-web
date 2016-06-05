@@ -22,7 +22,7 @@
 </nav>
 
 <div id="searchmodal" class="modal modal bottom-sheet">
-    <form action="/search">
+    <form method="post" action="/search">
         <div class="modal-content">
             <div class="row">
                 <div class="input-field col s12">
@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <a class="waves-effect waves-green btn-flat " type="submit" >Go</a>
+            <button class="btn waves-effect btn-flat " type="submit" >Go</button>
         </div>
     </form>
 </div>
