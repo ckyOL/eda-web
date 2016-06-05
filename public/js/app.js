@@ -19,6 +19,15 @@ function getNextForm(pageName) {
         });
 }
 
+function clothes(pageName,number) {
+    for (var i=0;i<number;i++){
+        $.get("/public/static/"+pageName, { },
+            function(data){
+                $("#uploadDiv").html(data);
+            }); 
+    }
+}
+
 function simpleGet(url,ajaxid) {
     $.get(url, { },
         function(data){
