@@ -7,6 +7,7 @@
 <nav>
     <div class="nav-wrapper light-blue darken-1">
         <div class="col s12">
+            <a href="/" class="breadcrumb">EDA</a>
             <a href="javascript:history.go(-1);" class="breadcrumb">Stream</a>
             <a href="#!" class="breadcrumb">Info</a>
         </div>

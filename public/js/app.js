@@ -8,6 +8,7 @@ $(document).ready(function(){
         dismissible: true
     });
     $(".button-collapse").sideNav();
+    $('.materialboxed').materialbox();
 });
 
 
