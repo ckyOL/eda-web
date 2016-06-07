@@ -20,7 +20,8 @@ function getNextForm(pageName) {
 }
 
 function clothes(pageName) {
-    var num = namber.CollcationNum.value;
+    var num = document.getElementById("CollcationNum").value;
+    alert(num);
     for (var i=0;i<num;i++){
         $.get("/public/static/"+pageName, { },
             function(data){

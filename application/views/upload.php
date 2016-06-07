@@ -55,8 +55,9 @@
                     <label class="active" for="CollocationNum">Collocation Number</label>
                 </div>
             </div>
+
             <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
-                <a class="waves-effect waves-light btn" onclick="clothes(collup.php,CollcationNum.value)"><i class="material-icons right">arrow_forward</i>Next</a>
+                <a class="waves-effect waves-light btn" onclick="clothes('collup.php')"><i class="material-icons right">arrow_forward</i>Next</a>
             </div>
         </form>
 
