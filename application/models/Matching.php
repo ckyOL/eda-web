@@ -41,7 +41,11 @@ class Matching extends CI_Model
         $query = $this->db->query($sql, array($words,$words,$words));
         return $query->result_array();
     }
-
+    
+    public function deleteMatching($userid,$mid)
+    {
+        
+    }
 }
 
 ?>
