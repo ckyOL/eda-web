@@ -37,6 +37,7 @@
                         </div>
                         <div class="card-action">
                     <span>
+                        <a href="/DeleteMatching/<?php echo $card_item['id']; ?>" ><i class="material-icons light-blue-text right">delete</i></a>
                         <a href="/matching/<?php echo $card_item['id']; ?>" ><i class="material-icons light-blue-text right">more_horiz</i></a>
                     </span>
                         </div>
@@ -51,10 +52,7 @@
                 <li class="collection-item avatar">
                     <img src="<?php echo $collectItem["photo"]; ?>" alt="" class="circle">
                     <span class="title"><?php echo $collectItem["userName"]; ?></span>
-                    <p>First Line <br>
-                        Second Line
-                    </p>
-                    <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
+                    <a href="#!" class="secondary-content"><i class="material-icons">people_outline</i></a>
                 </li>
                 <?php endforeach; ?>
             </ul>

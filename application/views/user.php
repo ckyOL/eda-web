@@ -14,6 +14,9 @@
         <div class="card-content">
             <h5 class="flow-text">Name:</h5>
         </div>
+        <div class="card-action">
+            <a href="#"><i class="material-icons light-blue-text">person_add</i></a>
+        </div>
     </div>
 
     <div class="row">
