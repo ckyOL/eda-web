@@ -12,52 +12,38 @@ class Comment extends CI_Controller
     {
         parent::__construct();
         $this->load->library('session');
-        $this->load->model('Comment');
+        $this->load->model('CommentModel');
     }
 
     public function index()
     {
 
-        if(isset($this->session->userid))
+        $id=$this->session->userid;
+        $mid=$this->input->post('mid');
+        $content=$this->input->post('content');
+        if(!$mid or !$content) echo 'Who is your daddy!';
+        else if($this->CommentModel->comment($id,$mid,$content))
         {
-            $id=$this->session->userid;
-            $mid=$this->input->post('mid');
-            $content=$this->input->post('content');
-            if(!$mid or !$content) echo 'Who is your daddy!';
-            else if($this->Comment->comment($id,$mid,$content))
-            {
-                echo 'comment success';
-            }
-            else
-            {
-                echo 'comment error';
-            }
+            echo 'comment success';
         }
         else
         {
-            $this->load->view('/quit');
+            echo 'comment error';
         }
     }
     public function delete()
     {
 
-        if(isset($this->session->userid))
+        $id=$this->session->userid;
+        $cid=$this->input->post('cid');
+        if(!$cid) ;
+        else if($this->CommentModel->deleteComment($id,$cid))
         {
-            $id=$this->session->userid;
-            $cid=$this->input->post('cid');
-            if(!$cid) echo 'Who is your daddy!';
-            else if($this->Comment->deleteComment($id,$cid))
-            {
-                echo 'delete comment success';
-            }
-            else
-            {
-                echo 'permission denied!';
-            }
+            echo 'delete comment success';
         }
         else
         {
-            $this->load->view('/quit');
+            echo 'permission denied!';
         }
     }
 }

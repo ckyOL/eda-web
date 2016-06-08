@@ -12,20 +12,20 @@ class Index extends CI_Controller
     {
         parent::__construct();
         $this->load->library('session');
-        $this->load->model('User');
-        $this->load->model('Matching');
+        $this->load->model('UserModel');
+        $this->load->model('MatchingModel');
     }
 
     public function index()
     {
-        $cards=$this->Matching->getHotMatching();
+        $cards=$this->MatchingModel->getHotMatching();
 
         if(isset($this->session->userid))
         {
             $id=$this->session->userid;
             $date=array(
-                'userName' => $this->User->getName($id),
-                'pictureUrl' => $this->User->getPicture($id),
+                'userName' => $this->UserModel->getName($id),
+                'pictureUrl' => $this->UserModel->getPicture($id),
                 'cards' => $cards
             );
             $this->load->view('/hot',$date);

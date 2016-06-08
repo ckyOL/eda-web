@@ -13,29 +13,22 @@ class DeleteMatching extends CI_Controller
     {
         parent::__construct();
         $this->load->library('session');
-        $this->load->model('Matching');
+        $this->load->model('MatchingModel');
     }
 
     public function index()
     {
 
-        if(isset($this->session->userid))
+        $id=$this->session->userid;
+        $mid=$this->input->get('mid');
+        if(!$mid) ;
+        else if($this->MatchingModel->deleteMatching($id,$mid))
         {
-            $id=$this->session->userid;
-            $mid=$this->input->get('mid');
-            if(!$mid) echo 'Who is your daddy!';
-            else if($this->Matching->deleteMatching($id,$mid))
-            {
-                echo 'delete Friend Success!';
-            }
-            else
-            {
-                echo 'permission denied!';
-            }
+            echo 'delete Friend Success!';
         }
         else
         {
-            $this->load->view('/quit');
+            echo 'permission denied!';
         }
     }
 }

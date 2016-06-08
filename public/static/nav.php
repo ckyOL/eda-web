@@ -7,15 +7,15 @@
 
         <ul class="right hide-on-med-and-down">
             <li><a class="modal-trigger" href="#searchmodal"><i class="material-icons left">search</i>Search Collocation</a></li>
-            <li><a href="myself"><img class="left circle" src="<?php //echo $pictureUrl; ?>"><?php echo $userName; ?></a></li>
-            <li><a href="quit"><i class="material-icons left">exit_to_app</i>Quit</a></li>
+            <li><a href="/myself"><img class="left circle" src="<?php //echo $pictureUrl; ?>"><?php echo $userName; ?></a></li>
+            <li><a href="/quit"><i class="material-icons left">exit_to_app</i>Quit</a></li>
         </ul>
         <ul id="slide-out" class="side-nav">
-            <li><a href="hot">Hot</a></li>
-            <li><a href="collect">Collection</a></li>
-            <li><a href="friend">Friend</a></li>
-            <li><a href="notification">Notification</a></li>
-            <li><a href="setting">Setting</a></li>
+            <li><a href="/">Hot</a></li>
+            <li><a href="/collect">Collection</a></li>
+            <li><a href="/friend">Friend</a></li>
+            <li><a href="/notification">Notification</a></li>
+            <li><a href="/setting">Setting</a></li>
         </ul>
 
     </div>
@@ -40,5 +40,5 @@
 </div>
 
 <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
-    <a class="btn-floating btn-large waves-effect waves-light purple darken-1" href="upload"><i class="material-icons">add</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light purple darken-1" href="/upload/pic"><i class="material-icons">add</i></a>
 </div>

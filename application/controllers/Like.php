@@ -18,30 +18,23 @@ class Like extends CI_Controller
     public function index()
     {
 
-        if(isset($this->session->userid))
+        $id=$this->session->userid;
+        $mid=$this->input->get('mid');
+        if(!$mid) ;
+        else if($this->LikeModel->like($id,$mid))
         {
-            $id=$this->session->userid;
-            $mid=$this->input->get('mid');
-            if(!$mid) echo 'Who is your daddy!';
-            else if($this->Like->like($id,$mid))
-            {
-                echo 'like Success!';
-            }
-            else
-            {
-                if($this->Like->unlike($id,$mid))
-                {
-                    echo 'unlike Success!';
-                }
-                else
-                {
-                    echo 'error';
-                }
-            }
+            echo 'like Success!';
         }
         else
         {
-            $this->load->view('/quit');
+            if($this->LikeModel->unlike($id,$mid))
+            {
+                echo 'unlike Success!';
+            }
+            else
+            {
+                echo 'error';
+            }
         }
     }
 }

@@ -5,7 +5,7 @@
  * Date: 2016-06-07
  * Time: 15:19
  */
-class Comment extends CI_Model
+class CommentModel extends CI_Model
 {
     public function __construct()
     {

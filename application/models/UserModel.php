@@ -5,7 +5,7 @@
  * Date: 2016-06-01
  * Time: 15:50
  */
-class User extends CI_Model
+class UserModel extends CI_Model
 {
     private $table='user';
     public function __construct()

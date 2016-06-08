@@ -3,19 +3,19 @@
  * Created by PhpStorm.
  * User: piekey1994
  * Date: 2016-06-07
- * Time: 23:21
+ * Time: 22:28
  */
-class Like extends CI_Model
+class FavoriteModel extends CI_Model
 {
     public function __construct()
     {
         $this->load->database();
     }
-    public function like($userid,$mid)
+    public function favorite($userid,$mid)
     {
 
     }
-    public function unlike($userid,$mid)
+    public function cancelFavorite($userid,$mid)
     {
 
     }

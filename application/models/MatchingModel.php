@@ -5,7 +5,7 @@
  * Date: 2016-06-01
  * Time: 15:50
  */
-class Matching extends CI_Model
+class MatchingModel extends CI_Model
 {
     public function __construct()
     {
@@ -42,9 +42,30 @@ class Matching extends CI_Model
         return $query->result_array();
     }
     
-    public function deleteMatching($userid,$mid)
+    public function delete($userid,$mid)
     {
         
+    }
+
+    public function push($userid,$picUrl,$style,$scenario,$season,$sex,$reviews)
+    {
+        $data = array(
+            'p1' => $picUrl,
+            'style' => $style,
+            'scenario' => $scenario,
+            'season' => $season,
+            'sex' => $sex,
+            'reviews' => $reviews,
+            'userid' => $userid,
+        );
+        if($this->db->insert('matching', $data))
+        {
+            return $this->db->insert_id();
+        }
+        else
+        {
+            return -1;
+        }
     }
 }
 

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-Connection timeout, you will return to index page after 3 seconds...
+You don't have a login, you will return to index page after 3 seconds...
 
 
 

@@ -12,36 +12,29 @@ class Favorite extends CI_Controller
     {
         parent::__construct();
         $this->load->library('session');
-        $this->load->model('Favorite');
+        $this->load->model('FavoriteModel');
     }
 
     public function index()
     {
 
-        if(isset($this->session->userid))
+        $id=$this->session->userid;
+        $mid=$this->input->get('mid');
+        if(!$mid) ;
+        else if($this->FavoriteModel->favorite($id,$mid))
         {
-            $id=$this->session->userid;
-            $mid=$this->input->get('mid');
-            if(!$mid) echo 'Who is your daddy!';
-            else if($this->Favorite->favorite($id,$mid))
-            {
-                echo 'favorite Success!';
-            }
-            else
-            {
-                if($this->Favorite->cancleFavorite($id,$mid))
-                {
-                    echo 'cancle favorite Success!';
-                }
-                else
-                {
-                    echo 'error';
-                }
-            }
+            echo 'favorite Success!';
         }
         else
         {
-            $this->load->view('/quit');
+            if($this->FavoriteModel->cancleFavorite($id,$mid))
+            {
+                echo 'cancle favorite Success!';
+            }
+            else
+            {
+                echo 'error';
+            }
         }
     }
 }

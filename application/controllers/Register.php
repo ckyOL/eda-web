@@ -11,7 +11,7 @@ class Register extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('User');
+        $this->load->model('UserModel');
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->database();
@@ -34,7 +34,7 @@ class Register extends CI_Controller {
         }
         else
         {
-            if($this->User->registerUser($this->input->post('username'),$this->input->post('password')))
+            if($this->UserModel->registerUser($this->input->post('username'),$this->input->post('password')))
                 $data['successInfo']='sign up success!';
             else
                 $data['systemerror']='sql error!Maybe your name was used!';

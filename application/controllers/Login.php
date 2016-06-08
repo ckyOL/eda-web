@@ -11,7 +11,7 @@ class Login extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('User');
+        $this->load->model('UserModel');
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->library('session');
@@ -31,7 +31,7 @@ class Login extends CI_Controller {
         }
         else
         {
-            $userid=$this->User->login($this->input->post('username'),$this->input->post('password'));
+            $userid=$this->UserModel->login($this->input->post('username'),$this->input->post('password'));
             if($userid!=-1)
             {
                 $this->session->set_userdata('userid', $userid);
