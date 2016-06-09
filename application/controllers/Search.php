@@ -17,7 +17,9 @@ class Search extends CI_Controller
 
     public function index()
     {
+
         $words=$this->input->post('searchcontent');
+
         $cards=$this->MatchingModel->searchMatching($words); 
         if(isset($this->session->userid))
         {
@@ -25,12 +27,14 @@ class Search extends CI_Controller
             $date=array(
                 'userName' => $this->UserModel->getName($id),
                 'pictureUrl' => $this->UserModel->getPicture($id),
-                'cards' => $cards
+                'cards' => $cards,
+                'searchwords' => 'Your search results of '.$words.':'
             );
             $this->load->view('/hot',$date); 
         }
         else
         {
+            $date['searchwords']='Your search results of '.$words.':';
             $date['cards']=$cards;
             $this->load->view('/index',$date);
         }

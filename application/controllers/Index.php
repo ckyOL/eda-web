@@ -24,6 +24,7 @@ class Index extends CI_Controller
         {
             $id=$this->session->userid;
             $date=array(
+                'searchwords' => '',
                 'userName' => $this->UserModel->getName($id),
                 'pictureUrl' => $this->UserModel->getPicture($id),
                 'cards' => $cards
@@ -33,6 +34,7 @@ class Index extends CI_Controller
         else
         {
             $date['cards']=$cards;
+            $date['searchwords']='';
             $this->load->view('/index',$date);
         }
     }

@@ -12,14 +12,6 @@ $(document).ready(function(){
 });
 
 
-
-function getNextForm(pageName) {
-    $.get("/public/static/"+pageName, { },
-        function(data){
-            $("#uploadDiv").html(data);
-        });
-}
-
 function clothes(pageName) {
     var num = document.getElementById("CollcationNum").value;
     alert(num);
@@ -29,6 +21,30 @@ function clothes(pageName) {
                 $("#uploadDiv").html(data);
             }); 
     }
+}
+
+function uploadPic(formid,ajaxid,url) {
+    $.ajax({
+        url: url,
+        type: 'POST',
+        cache: false,
+        data: new FormData($('#'+formid)[0]),
+        processData: false,
+        contentType: false
+    }).done(function(res) {
+        var resArray=res.toString().split(":");
+        if(resArray[0]=="0")
+        {
+            $("#"+ajaxid).html(resArray[1]);
+        }
+        else
+        {
+            location.reload(true);
+        }
+
+    }).fail(function(res) {
+        alert("Connection error");
+    });
 }
 
 function simpleGet(url,ajaxid) {

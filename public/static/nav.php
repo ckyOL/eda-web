@@ -40,5 +40,5 @@
 </div>
 
 <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
-    <a class="btn-floating btn-large waves-effect waves-light purple darken-1" href="/upload/pic"><i class="material-icons">add</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light purple darken-1" href="/upload"><i class="material-icons">add</i></a>
 </div>

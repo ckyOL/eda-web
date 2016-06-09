@@ -21,19 +21,19 @@
             <div class="col s12">
                 <h3 class="flow-text">Collocation picture</h3>
                 <img class="materialboxed" height="300" src="<?php echo $full_path; ?>">
-                <div class="red lighten-2"><span class="white-text"><?php echo $error;?></span></div>
-                <form action="/upload/pic" enctype="multipart/form-data" method="post">
+                <div class="red lighten-2"><span class="white-text"><div id="error"></div></span></div>
+                <form enctype="multipart/form-data" id="picForm">
                 <div class="file-field input-field col l9 s12 ">
                     <input class="file-path validate" type="text"/>
                     <div class="btn">
                         <span>File</span>
-                        <input type="file" name="picfile"/>
+                        <input type="file" name="picfile" id="picfile"/>
                     </div>
                 </div>
                 <div class="col l3 s12">
-                    <button class="btn-flat" type="submit">Upload
+                    <a class="btn-flat" onclick="uploadPic('picForm','error','/upload/pic')">Upload
                         <i class="material-icons right">file_upload</i>
-                    </button>
+                    </a>
                 </div>
                 </form>
             </div>
@@ -41,7 +41,7 @@
 
 
         <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
-            <a class="waves-effect waves-light btn <?php echo $next; ?>" href="/upload/matching" "><i class="material-icons right">arrow_forward</i>Next</a>
+            <a class="waves-effect waves-light btn <?php echo $next; ?>" href="/upload/matching"><i class="material-icons right">arrow_forward</i>Next</a>
         </div>
 
 
