@@ -12,7 +12,7 @@
             <div class="col s12 m6">
                 <div class="card medium">
                     <div class="card-image">
-                        <img src="<?php echo $card_item['p1']; ?>">
+                        <img class="materialboxed" src="<?php echo $card_item['p1']; ?>">
                         <span class="card-title"><?php echo $card_item['name']; ?></span>
                     </div>
                     <div class="card-content">

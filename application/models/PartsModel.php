@@ -23,4 +23,9 @@ class PartsModel extends CI_Model
         );
         return $this->db->insert('parts', $data);
     }
+    public function getByMid($mid)
+    {
+        $query = $this->db->get_where('parts', array('matchingid' => $mid));
+        return $query->result_array();
+    }
 }

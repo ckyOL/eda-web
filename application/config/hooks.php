@@ -19,7 +19,7 @@ $hook['post_controller_constructor'] = array(
     'params'   => array(
         'logged_in_session_attr' => 'userid',
         'quit_page' => '/quit',
-        'should_not_filter' => array('/^$/','/^index$/','/^login$/','/^look\/.*$/','/^quit$/', '/^register$/','/^search$/','/^matching\/[0-9]*$/'),
+        'should_not_filter' => array('/^$/','/^index$/','/^login$/','/^look\/.*$/','/^quit$/', '/^register$/','/^search$/'),
         //'need_admin_role' => array('/^//user$/', '/^//user//.*$/', '/^//role$/', '/^//role//.*$/')
     )
 );
