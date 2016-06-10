@@ -81,7 +81,7 @@ class UserModel extends CI_Model
     }
     public function levelUp($id)
     {
-        $level=(int)getLevel($id);
+        $level=(int)($this->getLevel($id));
         $data=array(
             'level' => $level+1,
         );

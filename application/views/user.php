@@ -1,5 +1,5 @@
 <?php include "public/static/head.php"; ?>
-<title>My Collocation</title>
+<title>User Home</title>
 </head>
 
 <body>

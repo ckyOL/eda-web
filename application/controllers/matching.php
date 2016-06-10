@@ -26,6 +26,7 @@ class Matching extends CI_Controller
 
     public function view($mid)
     {
+        $id=$this->session->userid;
         $uid=$this->MatchingModel->getUserId($mid);
         $user=$this->UserModel->getById($uid);
         $matching=$this->MatchingModel->getById($mid);
@@ -53,7 +54,7 @@ class Matching extends CI_Controller
         }
         else
         {
-            if($this->CommentModel->comment($user['id'],$mid,$this->input->post('comment')))
+            if($this->CommentModel->comment($id,$mid,$this->input->post('comment')))
             {
                 header('location:/matching/view/'.$mid);
             }

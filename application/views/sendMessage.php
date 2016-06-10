@@ -1,5 +1,5 @@
 <?php include "public/static/head.php"; ?>
-<title>Edit</title>
+<title>Send Message</title>
 </head>
 
 <body onload="warn()">
