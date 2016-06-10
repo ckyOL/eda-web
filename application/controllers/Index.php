@@ -29,13 +29,13 @@ class Index extends CI_Controller
                 'pictureUrl' => $this->UserModel->getPicture($id),
                 'cards' => $cards
             );
-            $this->load->view('/hot',$date);
+            $this->load->view('hot',$date);
         }
         else
         {
             $date['cards']=$cards;
             $date['searchwords']='';
-            $this->load->view('/index',$date);
+            $this->load->view('index',$date);
         }
     }
 }

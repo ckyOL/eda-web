@@ -13,10 +13,18 @@ class FavoriteModel extends CI_Model
     }
     public function favorite($userid,$mid)
     {
-
+        $data = array(
+            'userid' => $userid,
+            'matchingid' => $mid,
+        );
+        return $this->db->insert('favorite', $data);
     }
     public function cancelFavorite($userid,$mid)
     {
-
+        $data = array(
+            'userid' => $userid,
+            'matchingid' => $mid,
+        );
+        return $this->db->delete('favorite', $data);
     }
 }

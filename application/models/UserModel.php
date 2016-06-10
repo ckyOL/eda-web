@@ -43,10 +43,34 @@ class UserModel extends CI_Model
         if (isset($row)) return $row->picture;
         else return '%unknown%';
     }
-    
-    public function updateUser()
+
+    public function updatePic($id,$picUrl)
     {
-        
+        return $this->db->update('user', array('picture' => $picUrl), array('id' => $id));
+    }
+
+    public function updateUser($id,$name,$password,$sex,$signature)
+    {
+        $data=array(
+            'name' => $name,
+            'password' => $password,
+            'sex' => $sex,
+            'signature' => $signature,
+        );
+        return $this->db->update('user', $data, array('id' => $id));
+    }
+    
+    public function getById($id)
+    {
+        $query = $this->db->get_where('user', array('id' => $id));
+        return $query->row_array();
+    }
+    
+    public function getFriends($id)
+    {
+        $sql='SELECT user.id AS id,name,picture,sex,signature,level from user,friend WHERE friend.userid=? and friend.friendid=user.id';
+        $query = $this->db->query($sql, array($id));
+        return $query->result_array();
     }
 
 }

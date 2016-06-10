@@ -37,15 +37,19 @@ class MatchingModel extends CI_Model
     }
     public function searchMatching($words)
     {
-        $sql="SELECT matching.id as id,p1,matching.sex as sex,reviews,matching.time AS mtime,matching.userid AS author,COUNT(isread) AS num,name from matching LEFT JOIN likeit ON matching.id = likeit.matchingid,user WHERE hide=0 AND matching.userid=user.id AND style LIKE ? OR scenario LIKE ? OR season LIKE ? GROUP BY matching.id ORDER BY mtime DESC LIMIT 0,50";
+        $sql="SELECT matching.id as id,p1,matching.sex as sex,reviews,matching.time AS mtime,matching.userid AS author,COUNT(isread) AS num,name from matching LEFT JOIN likeit ON matching.id = likeit.matchingid,user WHERE hide=0 AND matching.userid=user.id AND style LIKE ? OR scenario LIKE ? OR season LIKE ? OR name LIKE ? GROUP BY matching.id ORDER BY mtime DESC LIMIT 0,50";
         $words='%'.$words.'%';
-        $query = $this->db->query($sql, array($words,$words,$words));
+        $query = $this->db->query($sql, array($words,$words,$words,$words));
         return $query->result_array();
     }
     
     public function delete($userid,$mid)
     {
-        
+        $data = array(
+            'userid' => $userid,
+            'id' => $mid,
+        );
+        return $this->db->delete('matching', $data);
     }
 
     public function push($userid,$picUrl,$style,$scenario,$season,$sex,$reviews)
@@ -71,9 +75,17 @@ class MatchingModel extends CI_Model
     
     public function getById($id)
     {
-        $query = $this->db->get_where('matching', array('id' => $id));
+        $query = $this->db->get_where('matching', array('id' => $id,'hide' => 0));
         return $query->row_array();
     }
+    
+    public function getByUid($uid)
+    {
+        $sql='SELECT id,p1,reviews,COUNT(isread) AS num from matching LEFT JOIN likeit ON matching.id = likeit.matchingid WHERE matching.userid=?';
+        $query = $this->db->query($sql, array($uid));
+        return $query->result_array();
+    }
+    
 }
 
 ?>

@@ -11,18 +11,6 @@ $(document).ready(function(){
     $('.materialboxed').materialbox();
 });
 
-
-function clothes(pageName) {
-    var num = document.getElementById("CollcationNum").value;
-    alert(num);
-    for (var i=0;i<num;i++){
-        $.get("/public/static/"+pageName, { },
-            function(data){
-                $("#uploadDiv").html(data);
-            }); 
-    }
-}
-
 function uploadPic(formid,ajaxid,url) {
     $.ajax({
         url: url,
@@ -47,25 +35,43 @@ function uploadPic(formid,ajaxid,url) {
     });
 }
 
-function simpleGet(url,ajaxid) {
-    $.get(url, { },
+function likeit(mid) {
+    $.get('/matching/like', { mid:mid },
         function(data){
-            $("#"+ajaxid).html(data);
+            var resArray=data.toString().split(":");
+            $("#likenum"+mid).html(resArray[0]);
+            Materialize.toast(resArray[1], 4000);
         });
 }
 
-function simpleSubmit(formid,ajaxid,url) {
-    $.ajax({
-        cache:false,
-        type: "POST",
-        url:url,
-        data:$("#"+formid).serialize(),
-        async: true,
-        error: function(request) {
-            alert("Connection error");
-        },
-        success: function(data) {
-            $("#"+ajaxid).html(data);
-        }
-    });
+function favorite(mid) {
+    $.get('/matching/favorite', { mid:mid },
+        function(data){
+            Materialize.toast(data, 4000);
+        });
 }
+
+function follow(fid) {
+    $.get('/friend/add', { friendid:fid },
+        function(data){
+            Materialize.toast(data, 4000);
+        });
+}
+
+function deleteMatching(mid) {
+    if(window.confirm('Delete is unrecoverable, do you confirm to delete?'))
+    {
+        $.get('/matching/delete', { mid:mid },
+            function(data){
+                Materialize.toast(data, 2000,'',function(){location.reload(true);})
+            });
+    }
+}
+
+function deleteFriend(fid) {
+    $.get('/friend/delete', { friendid:fid },
+        function(data){
+            Materialize.toast(data, 2000,'',function(){location.reload(true);})
+        });
+}
+

@@ -13,10 +13,19 @@ class FriendModel extends CI_Model
     }
     public function addFriend($id,$friendid)
     {
-        
+        $data = array(
+            'userid' => $id,
+            'friendid' => $friendid,
+        );
+        return $this->db->insert('friend', $data);
     }
     public function deleteFriend($id,$friendid)
     {
-        
+        $data = array(
+            'userid' => $id,
+            'friendid' => $friendid,
+        );
+        return $this->db->delete('friend', $data);
     }
+    
 }

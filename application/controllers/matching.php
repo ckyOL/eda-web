@@ -16,6 +16,8 @@ class Matching extends CI_Controller
         $this->load->model('MatchingModel');
         $this->load->model('PartsModel');
         $this->load->model('CommentModel');
+        $this->load->model('LikeModel');
+        $this->load->model('FavoriteModel');
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->library('session');
@@ -28,7 +30,12 @@ class Matching extends CI_Controller
         $user['name']=$this->UserModel->getName($user['id']);
         $user['picture']=$this->UserModel->getPicture($user['id']);
         $matching=$this->MatchingModel->getById($mid);
-        if(!$matching) return;
+        if(!$matching)
+        {
+            echo 'The matching is not exist!';
+            return;
+        }
+        $matching['likenum']=$this->LikeModel->getLikeNum($mid);
         $parts=$this->PartsModel->getByMid($mid);
         $comments=$this->CommentModel->getByMid($mid);
 
@@ -58,4 +65,67 @@ class Matching extends CI_Controller
             }
         }
     }
+    
+    public function like()
+    {
+        $id=$this->session->userid;
+        $mid=$this->input->get('mid');
+        if(!$mid) ;
+        else if($this->LikeModel->like($id,$mid))
+        {
+            $likenum=$this->LikeModel->getLikeNum($mid);
+            echo $likenum.':like Success!';
+        }
+        else
+        {
+            if($this->LikeModel->unlike($id,$mid))
+            {
+                $likenum=$this->LikeModel->getLikeNum($mid);
+                echo $likenum.':unlike Success!';
+            }
+            else
+            {
+                $likenum=$this->LikeModel->getLikeNum($mid);
+                echo $likenum.':error';
+            }
+        }
+    }
+    
+    public function favorite()
+    {
+        $id=$this->session->userid;
+        $mid=$this->input->get('mid');
+        if(!$mid) ;
+        else if($this->FavoriteModel->favorite($id,$mid))
+        {
+            echo 'favorite Success!';
+        }
+        else
+        {
+            if($this->FavoriteModel->cancelFavorite($id,$mid))
+            {
+                echo 'cancle favorite Success!';
+            }
+            else
+            {
+                echo 'error';
+            }
+        }
+    }
+    
+    public function delete()
+    {
+        $id=$this->session->userid;
+        $mid=$this->input->get('mid');
+        if(!$mid) ;
+        else if($this->MatchingModel->delete($id,$mid))
+        {
+            echo 'delete success';
+        }
+        else
+        {
+            echo 'system error!';
+        }
+    }
+    
 }

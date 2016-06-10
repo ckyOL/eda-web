@@ -20,10 +20,7 @@ class CommentModel extends CI_Model
         );
         return $this->db->insert('comment', $data);
     }
-    public function deleteComment($id,$cid)
-    {
 
-    }
     public function getByMid($mid)
     {
         $sql='SELECT content,comment.time AS time,name FROM comment,user where comment.userid=user.id AND matchingid=?';

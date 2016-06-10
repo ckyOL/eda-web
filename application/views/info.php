@@ -18,10 +18,10 @@
 <div class="container">
     <ul class="collection">
         <li class="collection-item avatar">
-            <a href="/userPage/<?php echo $user['id']; ?>"><img src="<?php echo $user['picture']; ?>" alt="userPic" class="circle"></a>
+            <a href="/user/page/<?php echo $user['id']; ?>"><img src="<?php echo $user['picture']; ?>" alt="userPic" class="circle"></a>
             <span class="title"><?php echo $user['name']; ?></span>
             <p>Time:<?php echo $matching['time']; ?></p>
-            <a href="/friend/add/<?php echo $user['id']; ?>" class="secondary-content">Follow</a>
+            <a href="javascript:follow('<?php echo $user['id']; ?>')" class="secondary-content">Follow</a>
         </li>
     </ul>
 
@@ -40,9 +40,9 @@
                 <h5 class="flow-text">Sex: <?php
                     switch($matching['sex'])
                     {
-                        case 1:echo 'Male';break;
-                        case 2:echo 'Female';break;
-                        case 3:echo 'Asexuality';break;
+                        case 1:echo '♂';break;
+                        case 2:echo '♀';break;
+                        case 3:echo '♂♀';break;
                     }
                     ?></h5>
                 <h5 class="flow-text">Reviews:</h5>
@@ -50,9 +50,9 @@
             </div>
             <div class="card-action col s12">
             <span>
-                <a href="/like/<?php echo $matching['id']; ?>" ><i class="material-icons light-blue-text ">thumb_up</i></a>
-                <a href="/favorite/<?php echo $matching['id']; ?>" ><i class="material-icons light-blue-text ">favorite</i></a>
-                <a href="/uploadMatching/<?php echo $matching['id']; ?>" ><i class="material-icons light-blue-text right">create</i></a>
+                <a href="javascript:likeit('<?php echo $matching['id']; ?>')" ><i class="material-icons light-blue-text ">thumb_up</i><span id="likenum<?php echo $matching['id']; ?>"><?php echo $matching['likenum']; ?></span></a>
+                <a href="javascript:favorite('<?php echo $matching['id']; ?>')" ><i class="material-icons light-blue-text ">favorite</i></a>
+                <a href="/edit/matching/<?php echo $matching['id']; ?>" ><i class="material-icons light-blue-text right">create</i></a>
             </span>
             </div>
         </div>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="card-action">
                     <a class="modal-trigger" href="#modal<?php echo $part['id']; ?>" ><i class="material-icons light-blue-text ">shopping_cart</i></a>
-                    <a href="/uploadParts/<?php echo $part['id']; ?>" ><i class="material-icons light-blue-text right">create</i></a>
+                    <a href="/edit/parts/<?php echo $part['id']; ?>" ><i class="material-icons light-blue-text right">create</i></a>
                 </div>
             </div>
         </div>

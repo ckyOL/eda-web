@@ -27,7 +27,7 @@ class Friend extends CI_Controller
             'pictureUrl' => $this->UserModel->getPicture($id),
             'cards' => $cards
         );
-        $this->load->view('/friend',$date);
+        $this->load->view('friend',$date);
     }
 
     public function add()
@@ -41,7 +41,14 @@ class Friend extends CI_Controller
         }
         else
         {
-            echo 'You are friends already!';
+            if($this->FriendModel->deleteFriend($id,$friendid))
+            {
+                echo 'delete Friend Success!';
+            }
+            else
+            {
+                echo 'This id is not exist!';
+            }
         }
     }
 

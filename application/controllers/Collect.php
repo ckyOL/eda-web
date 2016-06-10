@@ -26,6 +26,6 @@ class Collect extends CI_Controller
             'pictureUrl' => $this->UserModel->getPicture($id),
             'cards' => $cards
         );
-        $this->load->view('/collect',$date);
+        $this->load->view('collect',$date);
     }
 }

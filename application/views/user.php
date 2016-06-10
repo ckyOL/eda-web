@@ -7,32 +7,40 @@
 <?php include "public/static/nav.php" ?>
 
 <div class="container">
-    <div class="card Medium">
-        <div class="card-image">
-            <img src="images/sample-1.jpg">
-        </div>
-        <div class="card-content">
-            <h5 class="flow-text">Name:</h5>
-        </div>
-        <div class="card-action">
-            <a href="#"><i class="material-icons light-blue-text">person_add</i></a>
-        </div>
-    </div>
+    <ul class="collection">
+        <li class="collection-item avatar">
+            <img src="<?php echo $user['picture']; ?>" alt="userPic" class="circle">
+            <span class="title"><?php echo $user['name']; ?>,LV<?php echo $user['level']; ?></span>
+            <p><?php echo $user['signature']; ?></p>
+            <p><?php
+                switch($user['sex'])
+                {
+                    case 1:echo '♂';break;
+                    case 2:echo '♀';break;
+                    case 3:echo '';break;
+                }
+                ?>
+            </p>
+            <a href="javascript:follow('<?php echo $user['id']; ?>')" class="secondary-content">Follow</a>
+        </li>
+    </ul>
 
     <div class="row">
-        <?php foreach ($userCard as $card_item): ?>\
+        <?php foreach ($cards as $card_item): ?>
             <div class="col s12 m6">
-                <div class="card">
+                <div class="card medium">
                     <div class="card-image">
-                        <img src="<?php echo $card_item['photo']; ?>">
+                        <img class="materialboxed" src="<?php echo $card_item['p1']; ?>">
                     </div>
                     <div class="card-content">
-                        <p><?php echo $card_item['userName']; ?></p>
+                        <p><?php echo $card_item['reviews']; ?></p>
                     </div>
                     <div class="card-action">
-                        <span>
-                            <a href="#" ><i class="material-icons light-blue-text right">more_horiz</i></a>
-                        </span>
+                    <span>
+                        <a href="javascript:likeit('<?php echo $card_item['id']; ?>')" ><i class="material-icons light-blue-text ">thumb_up</i><span id="likenum<?php echo $card_item['id']; ?>"><?php echo $card_item['num']; ?></span></a>
+                        <a href="javascript:favorite('<?php echo $card_item['id']; ?>')" ><i class="material-icons light-blue-text ">favorite</i></a>
+                        <a href="/matching/view/<?php echo $card_item['id']; ?>" ><i class="material-icons light-blue-text right">more_horiz</i></a>
+                    </span>
                     </div>
                 </div>
             </div>
