@@ -46,4 +46,15 @@ class LikeModel extends CI_Model
         $row=$query->row_array();
         return $row['likenum'];
     }
+    public function getByUid($uid)
+    {
+        $sql='SELECT likeit.userid AS userid,matchingid,name FROM likeit,matching,user WHERE isread=0 and matchingid=matching.id and matching.userid=? and likeit.userid=user.id';
+        $query = $this->db->query($sql, array($uid));
+        return $query->result_array();
+    }
+
+    public function read($userid,$matchingid)
+    {
+        return $this->db->update('likeit', array('isread' => 1), array('userid' => $userid,'matchingid'=>$matchingid));
+    }
 }

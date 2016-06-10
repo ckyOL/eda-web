@@ -27,4 +27,16 @@ class CommentModel extends CI_Model
         $query = $this->db->query($sql, array($mid));
         return $query->result_array();
     }
+
+    public function getByUid($uid)
+    {
+        $sql='SELECT comment.id AS id,comment.userid AS userid,matchingid,content,name FROM comment,matching,user WHERE comment.matchingid=matching.id and matching.userid=? and isread=0 and user.id=matching.userid';
+        $query = $this->db->query($sql, array($uid));
+        return $query->result_array();
+    }
+
+    public function read($id)
+    {
+        return $this->db->update('comment', array('isread' => 1), array('id' => $id));
+    }
 }

@@ -15,6 +15,7 @@ class Upload extends CI_Controller
         $this->load->helper('form');
         $this->load->model('MatchingModel');
         $this->load->model('PartsModel');
+        $this->load->model('UserModel');
         $this->load->library('form_validation');
     }
 
@@ -87,6 +88,7 @@ class Upload extends CI_Controller
             {
                 $this->session->unset_userdata('picUrl');
                 $this->session->set_userdata('mid', $mid);
+                $this->UserModel->levelUp($id);
                 header('location:/upload/parts');
             }
             else

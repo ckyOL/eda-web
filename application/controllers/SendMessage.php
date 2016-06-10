@@ -66,4 +66,48 @@ class SendMessage extends CI_Controller
         }
 
     }
+
+    public function reply($mid)
+    {
+        $id=$this->session->userid;
+        $message=$this->MessageModel->getById($mid);
+        $detid=$message['srcid'];
+        $name=$this->UserModel->getName($detid);
+        $warnMessage='Reply the message';
+        $matchingid=$message['matchingid'];
+        $data=array(
+            'mid' => $matchingid,
+            'username' => $name,
+            'systemerror' => '',
+            'warnMessage' => $warnMessage
+        );
+
+        $this->form_validation->set_rules('title', 'Title', 'required|max_length[200]');
+        $this->form_validation->set_rules('content', 'Message', 'required');
+
+        if ($this->form_validation->run() == FALSE)
+        {
+            $this->load->view('sendMessage',$data);
+        }
+        else
+        {
+            $result=$this->MessageModel->send(
+                $id,
+                $detid,
+                $matchingid,
+                $this->input->post('title'),
+                $this->input->post('content')
+            );
+            if($result)
+            {
+                $this->MessageModel->read($mid);
+                header('location:/matching/view/'.$matchingid);
+            }
+            else
+            {
+                $data['systemerror']='system error';
+                $this->load->view('sendMessage',$data);
+            }
+        }
+    }
 }

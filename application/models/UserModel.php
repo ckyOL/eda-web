@@ -79,6 +79,14 @@ class UserModel extends CI_Model
         $row=$query->row_array();
         return $row['level'];
     }
+    public function levelUp($id)
+    {
+        $level=(int)getLevel($id);
+        $data=array(
+            'level' => $level+1,
+        );
+        return $this->db->update('user', $data, array('id' => $id));
+    }
 
 }
 
