@@ -28,4 +28,26 @@ class PartsModel extends CI_Model
         $query = $this->db->get_where('parts', array('matchingid' => $mid));
         return $query->result_array();
     }
+
+    public function getMid($id)
+    {
+        $query = $this->db->get_where('parts', array('id' => $id));
+        $row=$query->row_array();
+        return $row['matchingid'];
+    }
+
+    public function getById($id)
+    {
+        $query = $this->db->get_where('parts', array('id' => $id));
+        return $query->row_array();
+    }
+
+    public function update($id,$type,$content)
+    {
+        $data=array(
+            'type' => $type,
+            'content' => $content,
+        );
+        return $this->db->update('parts', $data, array('id' => $id));
+    }
 }

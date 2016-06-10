@@ -26,9 +26,8 @@ class Matching extends CI_Controller
 
     public function view($mid)
     {
-        $user['id']=$this->session->userid;
-        $user['name']=$this->UserModel->getName($user['id']);
-        $user['picture']=$this->UserModel->getPicture($user['id']);
+        $uid=$this->MatchingModel->getUserId($mid);
+        $user=$this->UserModel->getById($uid);
         $matching=$this->MatchingModel->getById($mid);
         if(!$matching)
         {

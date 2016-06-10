@@ -73,6 +73,13 @@ class UserModel extends CI_Model
         return $query->result_array();
     }
 
+    public function getLevel($id)
+    {
+        $query = $this->db->get_where('user', array('id' => $id));
+        $row=$query->row_array();
+        return $row['level'];
+    }
+
 }
 
 ?>

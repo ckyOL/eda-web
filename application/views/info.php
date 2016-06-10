@@ -19,7 +19,7 @@
     <ul class="collection">
         <li class="collection-item avatar">
             <a href="/user/page/<?php echo $user['id']; ?>"><img src="<?php echo $user['picture']; ?>" alt="userPic" class="circle"></a>
-            <span class="title"><?php echo $user['name']; ?></span>
+            <span class="title"><?php echo $user['name']; ?>,LV<?php echo $user['level']; ?></span>
             <p>Time:<?php echo $matching['time']; ?></p>
             <a href="javascript:follow('<?php echo $user['id']; ?>')" class="secondary-content">Follow</a>
         </li>

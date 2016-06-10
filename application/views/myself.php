@@ -8,8 +8,22 @@
 
 <div class="container">
 
-
-
+    <ul class="collection">
+        <li class="collection-item avatar">
+            <img src="<?php echo $user['picture']; ?>" alt="userPic" class="circle">
+            <span class="title"><?php echo $user['name']; ?>,LV<?php echo $user['level']; ?></span>
+            <p><?php echo $user['signature']; ?></p>
+            <p><?php
+                switch($user['sex'])
+                {
+                    case 1:echo '♂';break;
+                    case 2:echo '♀';break;
+                    case 3:echo '';break;
+                }
+                ?>
+            </p>
+        </li>
+    </ul>
     <div class="row">
         <div class="col s12">
             <ul class="tabs">
@@ -19,22 +33,7 @@
         </div>
 
         <div id="myColl" class="col s12">
-            <ul class="collection">
-                <li class="collection-item avatar">
-                    <img src="<?php echo $user['picture']; ?>" alt="userPic" class="circle">
-                    <span class="title"><?php echo $user['name']; ?>,LV<?php echo $user['level']; ?></span>
-                    <p><?php echo $user['signature']; ?></p>
-                    <p><?php
-                        switch($user['sex'])
-                        {
-                            case 1:echo '♂';break;
-                            case 2:echo '♀';break;
-                            case 3:echo '';break;
-                        }
-                        ?>
-                    </p>
-                </li>
-            </ul>
+
 
             <?php foreach ($cards as $card_item): ?>
                 <div class="col s12 m6">

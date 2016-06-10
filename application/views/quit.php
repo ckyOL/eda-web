@@ -5,13 +5,13 @@
     $(document).ready(function(){
         setTimeout(function(){
             location.href="/";
-        },3000);
+        },2000);
     });
 </script>
 </head>
 
 <body>
-You don't have a login, you will return to index page after 3 seconds...
+You don't have a login, you will return to index page after 2 seconds...
 
 
 

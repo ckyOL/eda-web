@@ -19,7 +19,7 @@ class MatchingModel extends CI_Model
     }
     public function getFriendMatching($id)
     {
-        $sql='SELECT matching.id as id,p1,matching.sex as sex,reviews,matching.time AS mtime,matching.userid AS author,COUNT(likeit.isread) AS num,name from matching LEFT JOIN likeit ON matching.id = likeit.matchingid,friend,user WHERE hide=0 AND matching.userid=user.id AND matching.userid=friend.friendid and friend.userid=1 GROUP BY matching.id ORDER BY mtime DESC LIMIT 0,50';
+        $sql='SELECT matching.id as id,p1,matching.sex as sex,reviews,matching.time AS mtime,matching.userid AS author,COUNT(likeit.isread) AS num,name from matching LEFT JOIN likeit ON matching.id = likeit.matchingid,friend,user WHERE hide=0 AND matching.userid=user.id AND matching.userid=friend.friendid and friend.userid=? GROUP BY matching.id ORDER BY mtime DESC LIMIT 0,50';
         $query = $this->db->query($sql, array($id));
         return $query->result_array();
     }
@@ -72,6 +72,18 @@ class MatchingModel extends CI_Model
             return -1;
         }
     }
+
+    public function update($id,$style,$scenario,$season,$sex,$reviews)
+    {
+        $data=array(
+            'style' => $style,
+            'scenario' => $scenario,
+            'season' => $season,
+            'sex' => $sex,
+            'reviews' => $reviews,
+        );
+        return $this->db->update('matching', $data, array('id' => $id));
+    }
     
     public function getById($id)
     {
@@ -81,11 +93,17 @@ class MatchingModel extends CI_Model
     
     public function getByUid($uid)
     {
-        $sql='SELECT id,p1,reviews,COUNT(isread) AS num from matching LEFT JOIN likeit ON matching.id = likeit.matchingid WHERE matching.userid=?';
+        $sql='SELECT id,p1,reviews,COUNT(isread) AS num from matching LEFT JOIN likeit ON matching.id = likeit.matchingid WHERE matching.userid=? GROUP BY matching.id';
         $query = $this->db->query($sql, array($uid));
         return $query->result_array();
     }
     
+    public function getUserid($id)
+    {
+        $query = $this->db->get_where('matching', array('id' => $id));
+        $row=$query->row_array();
+        return $row['userid'];
+    }
 }
 
 ?>

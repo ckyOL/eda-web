@@ -19,13 +19,14 @@ class User extends CI_Controller
 
     public function page($id)
     {
+        $myid=$this->session->userid;
         $user=$this->UserModel->getById($id);
         $cards=$this->MatchingModel->getByUid($id);
         $data=array(
             'user'=>$user,
             'cards'=>$cards,
-            'userName' => $this->UserModel->getName($id),
-            'pictureUrl' => $this->UserModel->getPicture($id),
+            'userName' => $this->UserModel->getName($myid),
+            'pictureUrl' => $this->UserModel->getPicture($myid),
         );
         $this->load->view('user',$data);
     }
