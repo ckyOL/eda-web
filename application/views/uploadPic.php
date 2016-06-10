@@ -39,9 +39,8 @@
             </div>
 
 
-
         <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
-            <a class="waves-effect waves-light btn <?php echo $next; ?>" href="/upload/matching"><i class="material-icons right">arrow_forward</i>Next</a>
+            <a class="btn <?php echo $next; ?>"  href="<?php echo $nextUrl; ?>"><i class="material-icons right">arrow_forward</i>Next</a>
         </div>
 
 

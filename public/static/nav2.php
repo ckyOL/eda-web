@@ -1,8 +1,8 @@
 <nav>
     <div class="nav-wrapper light-blue darken-1">
 
-        <a class="brand-logo " href="/">EDA</a>
-        <ul class="right hide-on-med-and-down">
+        <a class="brand-logo hide-on-med-and-down" href="/">EDA</a>
+        <ul class="right ">
             <li><a class="modal-trigger" href="#searchmodal"><i class="material-icons left">search</i>Search Collocation</a></li>
             <li><a href="/register">Sign up</a></li>
             <li><a href="/login">Login in</a></li>

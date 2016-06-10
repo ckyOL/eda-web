@@ -23,13 +23,15 @@ class Upload extends CI_Controller
     {
         $data = array(
                 'full_path' => '/public/img/white.jpg',
-                'next' => 'disabled'
+                'next' => 'disabled',
+                'nextUrl' => 'javascript:void(0);',
             );
         if(isset($this->session->picUrl))
         {
             $data = array(
                 'full_path' => $this->session->picUrl,
-                'next' => ''
+                'next' => '',
+                'nextUrl' => '/upload/matching',
             );
         }
         $this->load->view('uploadPic', $data);

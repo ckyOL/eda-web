@@ -1,11 +1,11 @@
 <nav>
     <div class="nav-wrapper light-blue darken-1">
-        <ul class="left hide-on-med-and-down">
+        <ul class="left">
             <li><a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a></li>
         </ul>
-        <a class="brand-logo " href="/">EDA</a>
+        <a class="brand-logo hide-on-med-and-down" href="/">EDA</a>
 
-        <ul class="right hide-on-med-and-down">
+        <ul class="right ">
             <li><a class="modal-trigger" href="#searchmodal"><i class="material-icons left">search</i>Search Collocation</a></li>
             <li><a href="/myself"><img class="left circle" width="40" height="40" style="margin: 10px 10px" src="<?php echo $pictureUrl; ?>"><?php echo $userName; ?></a></li>
             <li><a href="/quit"><i class="material-icons left">exit_to_app</i>Quit</a></li>
