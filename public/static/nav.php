@@ -24,8 +24,8 @@
             <li><a href="/friend">Friend</a></li>
             <li><a href="/notification">Notification</a></li>
             <li><a href="/setting">Setting</a></li>
-            <li><a class="modal-trigger" href="#searchmodal">search</a></li>
-            <li><a href="/myself"><?php echo $userName; ?></a></li>
+            <li><a class="modal-trigger" href="#searchmodal">Search</a></li>
+            <li><a href="/myself">MyPage</a></li>
             <li><a href="/quit">Quit</a></li>
         </ul>
 

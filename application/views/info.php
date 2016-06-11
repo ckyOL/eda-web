@@ -64,7 +64,7 @@
 
         <?php foreach ($parts as $part):?>
 
-        <div class="col s6">
+        <div class="col s12 l6">
             <div class="card medium">
                 <div class="card-image">
                     <img class="materialboxed" src="<?php echo $part['picture']; ?>">

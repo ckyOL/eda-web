@@ -7,7 +7,7 @@
 <nav>
     <div class="nav-wrapper light-blue darken-1">
         <div class="col s12">
-            <a href="/matching/<?php echo $mid; ?>" class="breadcrumb">Info</a>
+            <a href="/matching/view/<?php echo $mid; ?>" class="breadcrumb">Info</a>
             <a href="#!" class="breadcrumb">Edit</a>
         </div>
     </div>

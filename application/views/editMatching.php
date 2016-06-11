@@ -7,7 +7,7 @@
 <nav>
     <div class="nav-wrapper light-blue darken-1">
         <div class="col s12">
-            <a href="/matching/<?php echo $mid; ?>" class="breadcrumb">Info</a>
+            <a href="/matching/view/<?php echo $mid; ?>" class="breadcrumb">Info</a>
             <a href="#!" class="breadcrumb">Edit</a>
         </div>
     </div>
@@ -54,11 +54,11 @@
                 <input id="Scenario" name="scenario" type="text" class="validate" value="<?php echo set_value('scenario'); ?>">
                 <label class="active" for="Scenario">Scenario</label>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field col s12 l6">
                 <input id="Season" name="season" type="text" class="validate" value="<?php echo set_value('season'); ?>">
                 <label class="active" for="Season">Season</label>
             </div>
-            <div class="col s6">
+            <div class="col s12 l6">
                 <label>Sex Select</label>
                 <select name="sex" class="browser-default">
                     <option value="1" <?php echo  set_select('sex', '1'); ?>>Male</option>

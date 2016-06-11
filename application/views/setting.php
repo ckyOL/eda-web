@@ -48,11 +48,11 @@
     <form method="post">
         <div class="row">
             <div class="red lighten-2 col s12"><span class="white-text"><?php echo validation_errors();echo $systemerror; ?></span></div>
-            <div class="input-field col s6">
+            <div class="input-field col s12 l6">
                 <input id="username" name="username" type="text" class="validate" value="<?php echo set_value('username'); ?>">
                 <label class="active" for="username">User Name</label>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field col s12 l6">
                 <input id="password" name="password" type="password" class="validate">
                 <label class="active" for="password">Password</label>
             </div>
